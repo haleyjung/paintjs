@@ -4,12 +4,12 @@ const canvas = document.getElementById("jsCanvas");
 
 let painting = false;
 
-// > stop painting when mouse leaves the canvas or we let go of it
+// Stop painting when mouse leaves the canvas or we let go of it
 function stopPainting(){
     painting = false;
 }
 
-// > offsetX, offsetY is the canvas area (client is the whole window)
+// offsetX, offsetY is the canvas area (client is the whole window)
 function onMouseMove(event){
     const x = event.offsetX;
     const y = event.offsetY;
