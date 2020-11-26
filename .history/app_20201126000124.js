@@ -81,12 +81,6 @@ function handleCanvasClick(){
     }
 }
 
-// Set save button
-function handleSaveClick(){
-    const image = canvas.toDataUrl("image/jpeg");
-    console.log(image);
-}
-
 // Prevent right click for saving image from the webpage (2)
 // function handleCM(event){
 //     event.preventDefault()
@@ -105,16 +99,12 @@ if(canvas){
 // Change strings to array and make event listener
 Array.from(colors).forEach(color => 
     color.addEventListener("click", handleColorClick)
-)
+);
 
 if(range){
     range.addEventListener("input", handleRangeChange)
-}
+};
 
 if(mode){
     mode.addEventListener("click", handleModeClick)
-}
-
-if(saveBtn){
-    saveBtn.addEventListener("click", handleSaveClick)
-}
+};

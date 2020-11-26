@@ -81,12 +81,6 @@ function handleCanvasClick(){
     }
 }
 
-// Set save button
-function handleSaveClick(){
-    const image = canvas.toDataUrl("image/jpeg");
-    console.log(image);
-}
-
 // Prevent right click for saving image from the webpage (2)
 // function handleCM(event){
 //     event.preventDefault()

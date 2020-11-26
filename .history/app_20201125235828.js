@@ -4,7 +4,6 @@ const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
-const saveBtn = document.getElementById("jsSave");
 
 // Make a variable for repeating elements
 const INITIAL_COLOR = "#2c2c2c"
@@ -81,16 +80,9 @@ function handleCanvasClick(){
     }
 }
 
-// Set save button
-function handleSaveClick(){
-    const image = canvas.toDataUrl("image/jpeg");
-    console.log(image);
+function handleCM(event){
+    console.log(event);
 }
-
-// Prevent right click for saving image from the webpage (2)
-// function handleCM(event){
-//     event.preventDefault()
-// }
 
 if(canvas){
     canvas.addEventListener("mousemove", onMouseMove);
@@ -98,23 +90,19 @@ if(canvas){
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
-    // Prevent right click for saving image from the webpage (1)
-    // canvas.addEventListener("contextmenu", handleCM);
+    // if we don't want users to save images from the webpage
+    canvas.addEventListener("contextmenu", handleCM);
 }
 
 // Change strings to array and make event listener
 Array.from(colors).forEach(color => 
     color.addEventListener("click", handleColorClick)
-)
+);
 
 if(range){
     range.addEventListener("input", handleRangeChange)
-}
+};
 
 if(mode){
     mode.addEventListener("click", handleModeClick)
-}
-
-if(saveBtn){
-    saveBtn.addEventListener("click", handleSaveClick)
-}
+};

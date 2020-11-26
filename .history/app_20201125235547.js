@@ -4,7 +4,6 @@ const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
-const saveBtn = document.getElementById("jsSave");
 
 // Make a variable for repeating elements
 const INITIAL_COLOR = "#2c2c2c"
@@ -14,10 +13,8 @@ const CANVAS_SIZE = 700;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
-// Set initial canvas background color
-ctx.fillStyle = "white";
-ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 // Set the style of the stroke in canvas
+ctx.fillStyle = "white";
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
 ctx.lineWidth = 5;
@@ -81,40 +78,23 @@ function handleCanvasClick(){
     }
 }
 
-// Set save button
-function handleSaveClick(){
-    const image = canvas.toDataUrl("image/jpeg");
-    console.log(image);
-}
-
-// Prevent right click for saving image from the webpage (2)
-// function handleCM(event){
-//     event.preventDefault()
-// }
-
 if(canvas){
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
-    // Prevent right click for saving image from the webpage (1)
-    // canvas.addEventListener("contextmenu", handleCM);
 }
 
 // Change strings to array and make event listener
 Array.from(colors).forEach(color => 
     color.addEventListener("click", handleColorClick)
-)
+);
 
 if(range){
     range.addEventListener("input", handleRangeChange)
-}
+};
 
 if(mode){
     mode.addEventListener("click", handleModeClick)
-}
-
-if(saveBtn){
-    saveBtn.addEventListener("click", handleSaveClick)
-}
+};
