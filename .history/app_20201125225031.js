@@ -31,7 +31,6 @@ function onMouseMove(event){
         ctx.moveTo(x, y);
     } else {
         ctx.lineTo(x, y);
-        // Make path visible
         ctx.stroke();
     }
 }

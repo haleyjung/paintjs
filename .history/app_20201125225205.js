@@ -25,11 +25,11 @@ function startPainting(){
 function onMouseMove(event){
     const x = event.offsetX;
     const y = event.offsetY;
-    // Create a starting point of a path(line)
     if(!painting){
         ctx.beginPath();
         ctx.moveTo(x, y);
     } else {
+        // Create a starting point of a path(line)
         ctx.lineTo(x, y);
         // Make path visible
         ctx.stroke();

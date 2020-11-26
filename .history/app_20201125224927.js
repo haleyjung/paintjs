@@ -2,11 +2,10 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 
-// Give a size to the pixel modifier in addition to css
+// Give a size to the pixel modifier
 canvas.width = 700;
 canvas.height = 700;
 
-// Set the style of the stroke in canvas
 ctx.strokeStyle ="#2c2c2c"
 ctx.lineWidth=2.5;
 
@@ -31,7 +30,6 @@ function onMouseMove(event){
         ctx.moveTo(x, y);
     } else {
         ctx.lineTo(x, y);
-        // Make path visible
         ctx.stroke();
     }
 }
