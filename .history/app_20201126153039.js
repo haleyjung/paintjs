@@ -86,9 +86,8 @@ function handleSaveClick(){
     const image = canvas.toDataURL("image/jpeg");
     // Create an unexisting link of the image
     const link = document.createElement("a");
-    link.href = image;
-    // Create an imaginary click for saving the image
-    link.download = "PaintJS[🎨]";
+    link.download = image;
+    // Create an imaginary click
     link.click();
 }
 

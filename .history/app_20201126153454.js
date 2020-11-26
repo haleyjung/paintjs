@@ -83,7 +83,7 @@ function handleCanvasClick(){
 
 // Set save button: get the data of the canvas as an image
 function handleSaveClick(){
-    const image = canvas.toDataURL("image/jpeg");
+    const image = canvas.toDataURL("image/png");
     // Create an unexisting link of the image
     const link = document.createElement("a");
     link.href = image;

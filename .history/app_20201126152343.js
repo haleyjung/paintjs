@@ -81,15 +81,10 @@ function handleCanvasClick(){
     }
 }
 
-// Set save button: get the data of the canvas as an image
+// Set save button
 function handleSaveClick(){
-    const image = canvas.toDataURL("image/jpeg");
-    // Create an unexisting link of the image
-    const link = document.createElement("a");
-    link.href = image;
-    // Create an imaginary click for saving the image
-    link.download = "PaintJS[🎨]";
-    link.click();
+    const image = canvas.toDataUrl("image/jpeg");
+    console.log(image);
 }
 
 // To prevent right click for saving image from the webpage (2)↴
@@ -110,7 +105,7 @@ if(canvas){
 // Change strings to array and make event listener
 Array.from(colors).forEach(color => 
     color.addEventListener("click", handleColorClick)
-);
+)
 
 if(range){
     range.addEventListener("input", handleRangeChange);
